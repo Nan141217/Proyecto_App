@@ -21,7 +21,11 @@ import com.google.android.material.switchmaterial.SwitchMaterial
 import com.google.android.material.textfield.TextInputEditText
 import Adapters.LoanAdapter
 import Controllers.LoanController
+<<<<<<< HEAD
+import Data.ApiDataManager
+=======
 import Data.MemoryDataManager
+>>>>>>> origin/main
 import Person.Book
 import Person.Loan
 import java.text.SimpleDateFormat
@@ -107,11 +111,19 @@ class LibraryActivity3 : AppCompatActivity() {
     }
 
     private fun initController() {
+<<<<<<< HEAD
+        loanController = LoanController(ApiDataManager())
+    }
+
+    private fun setupBookSpinner() {
+        val books = ApiDataManager().getAllBooks()
+=======
         loanController = LoanController(MemoryDataManager)
     }
 
     private fun setupBookSpinner() {
         val books = MemoryDataManager.getAllBooks()
+>>>>>>> origin/main
         val bookTitles = books.map { it.titulo }
         val adapter = ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, bookTitles)
         actvBook.setAdapter(adapter)
@@ -181,7 +193,11 @@ class LibraryActivity3 : AppCompatActivity() {
         }
 
         val loan = Loan(id, selectedBook!!, borrower, selectedDate, returned)
+<<<<<<< HEAD
+        ApiDataManager().addLoan(loan)
+=======
         MemoryDataManager.addLoan(loan)
+>>>>>>> origin/main
         loadLoans()
         clearForm()
         Toast.makeText(this, "Préstamo agregado exitosamente", Toast.LENGTH_SHORT).show()
@@ -198,7 +214,11 @@ class LibraryActivity3 : AppCompatActivity() {
         }
 
         val loan = Loan(id, selectedBook!!, borrower, selectedDate, returned)
+<<<<<<< HEAD
+        ApiDataManager().updateLoan(loan)
+=======
         MemoryDataManager.updateLoan(loan)
+>>>>>>> origin/main
         loadLoans()
         clearForm()
         Toast.makeText(this, "Préstamo actualizado exitosamente", Toast.LENGTH_SHORT).show()
@@ -221,7 +241,11 @@ class LibraryActivity3 : AppCompatActivity() {
             .setTitle("Eliminar Préstamo")
             .setMessage("¿Estás seguro de que quieres eliminar este préstamo?")
             .setPositiveButton("Sí") { _, _ ->
+<<<<<<< HEAD
+                ApiDataManager().deleteLoan(loan.id)
+=======
                 MemoryDataManager.deleteLoan(loan.id)
+>>>>>>> origin/main
                 loadLoans()
                 Toast.makeText(this, "Préstamo eliminado", Toast.LENGTH_SHORT).show()
             }

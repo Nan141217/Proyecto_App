@@ -30,7 +30,11 @@ import com.google.android.material.switchmaterial.SwitchMaterial
 import com.google.android.material.textfield.TextInputEditText
 import Adapters.BookAdapter
 import Controllers.BookController
+<<<<<<< HEAD
+import Data.ApiDataManager
+=======
 import Data.MemoryDataManager
+>>>>>>> origin/main
 import Person.Author
 import Person.Book
 import java.io.File
@@ -88,6 +92,19 @@ class LibraryActivity2 : AppCompatActivity() {
         }
     }
 
+<<<<<<< HEAD
+    private val galleryPermissionLauncher = registerForActivityResult(
+        ActivityResultContracts.RequestPermission()
+    ) { isGranted: Boolean ->
+        if (isGranted) {
+            openGallery()
+        } else {
+            Toast.makeText(this, "Gallery permission denied", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+=======
+>>>>>>> origin/main
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -105,6 +122,35 @@ class LibraryActivity2 : AppCompatActivity() {
         setupRecyclerView()
         setupListeners()
         loadBooks()
+<<<<<<< HEAD
+
+        // Restore state if needed
+        savedInstanceState?.let {
+            val uriString = it.getString(KEY_PHOTO_URI)
+            if (uriString != null) {
+                photoUri = Uri.parse(uriString)
+                try {
+                    val inputStream = contentResolver.openInputStream(photoUri!!)
+                    selectedBitmap = BitmapFactory.decodeStream(inputStream)
+                    imgBookCoverPreview.setImageBitmap(selectedBitmap)
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                }
+            }
+        }
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        photoUri?.let {
+            outState.putString(KEY_PHOTO_URI, it.toString())
+        }
+    }
+
+    companion object {
+        private const val KEY_PHOTO_URI = "photo_uri"
+=======
+>>>>>>> origin/main
     }
 
     private fun initViews() {
@@ -148,11 +194,19 @@ class LibraryActivity2 : AppCompatActivity() {
     }
 
     private fun initController() {
+<<<<<<< HEAD
+        bookController = BookController(ApiDataManager())
+    }
+
+    private fun setupAuthorSpinner() {
+        val authors = ApiDataManager().getAllAuthors()
+=======
         bookController = BookController(MemoryDataManager)
     }
 
     private fun setupAuthorSpinner() {
         val authors = MemoryDataManager.getAllAuthors()
+>>>>>>> origin/main
         val authorNames = authors.map { it.nombre }
         val adapter = ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, authorNames)
         actvAuthor.setAdapter(adapter)
@@ -197,7 +251,11 @@ class LibraryActivity2 : AppCompatActivity() {
             .setItems(options) { _, which ->
                 when (which) {
                     0 -> checkCameraPermissionAndOpen()
+<<<<<<< HEAD
+                    1 -> checkGalleryPermissionAndOpen()
+=======
                     1 -> openGallery()
+>>>>>>> origin/main
                 }
             }
             .show()
@@ -236,6 +294,40 @@ class LibraryActivity2 : AppCompatActivity() {
         )
     }
 
+<<<<<<< HEAD
+    private fun checkGalleryPermissionAndOpen() {
+        when {
+            android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.TIRAMISU -> {
+                when {
+                    ContextCompat.checkSelfPermission(
+                        this,
+                        Manifest.permission.READ_MEDIA_IMAGES
+                    ) == PackageManager.PERMISSION_GRANTED -> {
+                        openGallery()
+                    }
+                    else -> {
+                        galleryPermissionLauncher.launch(Manifest.permission.READ_MEDIA_IMAGES)
+                    }
+                }
+            }
+            else -> {
+                when {
+                    ContextCompat.checkSelfPermission(
+                        this,
+                        Manifest.permission.READ_EXTERNAL_STORAGE
+                    ) == PackageManager.PERMISSION_GRANTED -> {
+                        openGallery()
+                    }
+                    else -> {
+                        galleryPermissionLauncher.launch(Manifest.permission.READ_EXTERNAL_STORAGE)
+                    }
+                }
+            }
+        }
+    }
+
+=======
+>>>>>>> origin/main
     private fun openGallery() {
         galleryLauncher.launch("image/*")
     }

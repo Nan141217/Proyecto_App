@@ -19,5 +19,13 @@ dependencyResolutionManagement {
     }
 }
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 rootProject.name = "Inicio"
+=======
+rootProject.name = "TOFULLTOC"
+>>>>>>> origin/main
+=======
+rootProject.name = "Inicio"
+>>>>>>> origin/main
 include(":app")

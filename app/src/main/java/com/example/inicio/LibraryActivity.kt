@@ -17,7 +17,11 @@ import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.textfield.TextInputEditText
 import Adapters.AuthorAdapter
 import Controllers.AuthorController
+<<<<<<< HEAD
+import Data.ApiDataManager
+=======
 import Data.MemoryDataManager
+>>>>>>> origin/main
 import Person.Author
 
 class LibraryActivity : AppCompatActivity() {
@@ -89,7 +93,11 @@ class LibraryActivity : AppCompatActivity() {
     }
 
     private fun initController() {
+<<<<<<< HEAD
+        authorController = AuthorController(ApiDataManager())
+=======
         authorController = AuthorController(MemoryDataManager)
+>>>>>>> origin/main
     }
 
     private fun setupRecyclerView() {
@@ -159,7 +167,11 @@ class LibraryActivity : AppCompatActivity() {
             .setTitle("Eliminar Autor")
             .setMessage("¿Estás seguro de que quieres eliminar este autor?")
             .setPositiveButton("Sí") { _, _ ->
+<<<<<<< HEAD
+                ApiDataManager().deleteAuthor(author.id)
+=======
                 MemoryDataManager.deleteAuthor(author.id)
+>>>>>>> origin/main
                 loadAuthors()
                 Toast.makeText(this, "Autor eliminado", Toast.LENGTH_SHORT).show()
             }
