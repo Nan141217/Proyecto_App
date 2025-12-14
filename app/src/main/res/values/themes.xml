@@ -1,6 +1,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/main
     <style name="Theme.Inicio" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
@@ -26,6 +29,7 @@
     <style name="TextAppearance.App.Menu" parent="TextAppearance.MaterialComponents.Body1">
         <item name="android:textColor">@android:color/black</item>
     </style>
+<<<<<<< HEAD
 =======
     <style name="Base.Theme.TOFULLTOC" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
@@ -33,5 +37,7 @@
     </style>
 
     <style name="Theme.TOFULLTOC" parent="Base.Theme.TOFULLTOC" />
+>>>>>>> origin/main
+=======
 >>>>>>> origin/main
 </resources>

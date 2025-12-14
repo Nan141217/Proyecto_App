@@ -5,11 +5,15 @@ plugins {
 
 android {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/main
     namespace = "com.example.inicio"
     compileSdk = 36
 
     defaultConfig {
         applicationId = "com.example.inicio"
+<<<<<<< HEAD
         minSdk = 26
         targetSdk = 34
 =======
@@ -21,6 +25,10 @@ android {
     defaultConfig {
         applicationId = "com.example.tofulltoc"
         minSdk = 34
+        targetSdk = 36
+>>>>>>> origin/main
+=======
+        minSdk = 36
         targetSdk = 36
 >>>>>>> origin/main
         versionCode = 1
@@ -49,8 +57,12 @@ android {
 
 dependencies {
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
+>>>>>>> origin/main
+=======
+
 >>>>>>> origin/main
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -60,6 +72,7 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+<<<<<<< HEAD
 <<<<<<< HEAD
 
     // Retrofit para consumir API REST
@@ -71,6 +84,8 @@ dependencies {
     // Coroutines para operaciones asíncronas
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
+=======
+>>>>>>> origin/main
 =======
 >>>>>>> origin/main
 }

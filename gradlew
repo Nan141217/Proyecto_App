@@ -1,13 +1,19 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/main
 #!/usr/bin/env sh
 
 #
 # Copyright 2015 the original author or authors.
+<<<<<<< HEAD
 =======
 #!/bin/sh
 
 #
 # Copyright © 2015 the original authors.
+>>>>>>> origin/main
+=======
 >>>>>>> origin/main
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -23,6 +29,9 @@
 # limitations under the License.
 #
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/main
 
 ##############################################################################
 ##
@@ -60,6 +69,7 @@ MAX_FD="maximum"
 warn () {
     echo "$*"
 }
+<<<<<<< HEAD
 =======
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -141,6 +151,8 @@ warn () {
     echo "$*"
 } >&2
 >>>>>>> origin/main
+=======
+>>>>>>> origin/main
 
 die () {
     echo
@@ -148,9 +160,13 @@ die () {
     echo
     exit 1
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 =======
 } >&2
+>>>>>>> origin/main
+=======
+}
 >>>>>>> origin/main
 
 # OS specific support (must be 'true' or 'false').
@@ -159,6 +175,9 @@ msys=false
 darwin=false
 nonstop=false
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/main
 case "`uname`" in
   CYGWIN* )
     cygwin=true
@@ -175,6 +194,7 @@ case "`uname`" in
 esac
 
 CLASSPATH=$APP_HOME/gradle/wrapper/gradle-wrapper.jar
+<<<<<<< HEAD
 =======
 case "$( uname )" in                #(
   CYGWIN* )         cygwin=true  ;; #(
@@ -185,12 +205,15 @@ esac
 
 CLASSPATH="\\\"\\\""
 >>>>>>> origin/main
+=======
+>>>>>>> origin/main
 
 
 # Determine the Java command to use to start the JVM.
 if [ -n "$JAVA_HOME" ] ; then
     if [ -x "$JAVA_HOME/jre/sh/java" ] ; then
         # IBM's JDK on AIX uses strange locations for the executables
+<<<<<<< HEAD
 <<<<<<< HEAD
         JAVACMD="$JAVA_HOME/jre/sh/java"
     else
@@ -199,6 +222,11 @@ if [ -n "$JAVA_HOME" ] ; then
         JAVACMD=$JAVA_HOME/jre/sh/java
     else
         JAVACMD=$JAVA_HOME/bin/java
+>>>>>>> origin/main
+=======
+        JAVACMD="$JAVA_HOME/jre/sh/java"
+    else
+        JAVACMD="$JAVA_HOME/bin/java"
 >>>>>>> origin/main
     fi
     if [ ! -x "$JAVACMD" ] ; then
@@ -209,6 +237,9 @@ location of your Java installation."
     fi
 else
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/main
     JAVACMD="java"
     which java >/dev/null 2>&1 || die "ERROR: JAVA_HOME is not set and no 'java' command could be found in your PATH.
 
@@ -292,6 +323,7 @@ APP_ARGS=`save "$@"`
 
 # Collect all arguments for the java command, following the shell quoting and substitution rules
 eval set -- $DEFAULT_JVM_OPTS $JAVA_OPTS $GRADLE_OPTS "\"-Dorg.gradle.appname=$APP_BASE_NAME\"" -classpath "\"$CLASSPATH\"" org.gradle.wrapper.GradleWrapperMain "$APP_ARGS"
+<<<<<<< HEAD
 =======
     JAVACMD=java
     if ! command -v java >/dev/null 2>&1
@@ -408,6 +440,8 @@ eval "set -- $(
         sed ' s~[^-[:alnum:]+,./:=@_]~\\&~g; ' |
         tr '\n' ' '
     )" '"$@"'
+>>>>>>> origin/main
+=======
 >>>>>>> origin/main
 
 exec "$JAVACMD" "$@"

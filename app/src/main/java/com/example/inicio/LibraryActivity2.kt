@@ -30,7 +30,11 @@ import com.google.android.material.switchmaterial.SwitchMaterial
 import com.google.android.material.textfield.TextInputEditText
 import Adapters.BookAdapter
 import Controllers.BookController
+<<<<<<< HEAD
 import Data.ApiDataManager
+=======
+import Data.MemoryDataManager
+>>>>>>> origin/main
 import Person.Author
 import Person.Book
 import java.io.File
@@ -88,6 +92,7 @@ class LibraryActivity2 : AppCompatActivity() {
         }
     }
 
+<<<<<<< HEAD
     private val galleryPermissionLauncher = registerForActivityResult(
         ActivityResultContracts.RequestPermission()
     ) { isGranted: Boolean ->
@@ -98,6 +103,8 @@ class LibraryActivity2 : AppCompatActivity() {
         }
     }
 
+=======
+>>>>>>> origin/main
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -115,6 +122,7 @@ class LibraryActivity2 : AppCompatActivity() {
         setupRecyclerView()
         setupListeners()
         loadBooks()
+<<<<<<< HEAD
 
         // Restore state if needed
         savedInstanceState?.let {
@@ -141,6 +149,8 @@ class LibraryActivity2 : AppCompatActivity() {
 
     companion object {
         private const val KEY_PHOTO_URI = "photo_uri"
+=======
+>>>>>>> origin/main
     }
 
     private fun initViews() {
@@ -184,11 +194,19 @@ class LibraryActivity2 : AppCompatActivity() {
     }
 
     private fun initController() {
+<<<<<<< HEAD
         bookController = BookController(ApiDataManager())
     }
 
     private fun setupAuthorSpinner() {
         val authors = ApiDataManager().getAllAuthors()
+=======
+        bookController = BookController(MemoryDataManager)
+    }
+
+    private fun setupAuthorSpinner() {
+        val authors = MemoryDataManager.getAllAuthors()
+>>>>>>> origin/main
         val authorNames = authors.map { it.nombre }
         val adapter = ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, authorNames)
         actvAuthor.setAdapter(adapter)
@@ -233,7 +251,11 @@ class LibraryActivity2 : AppCompatActivity() {
             .setItems(options) { _, which ->
                 when (which) {
                     0 -> checkCameraPermissionAndOpen()
+<<<<<<< HEAD
                     1 -> checkGalleryPermissionAndOpen()
+=======
+                    1 -> openGallery()
+>>>>>>> origin/main
                 }
             }
             .show()
@@ -272,6 +294,7 @@ class LibraryActivity2 : AppCompatActivity() {
         )
     }
 
+<<<<<<< HEAD
     private fun checkGalleryPermissionAndOpen() {
         when {
             android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.TIRAMISU -> {
@@ -303,6 +326,8 @@ class LibraryActivity2 : AppCompatActivity() {
         }
     }
 
+=======
+>>>>>>> origin/main
     private fun openGallery() {
         galleryLauncher.launch("image/*")
     }

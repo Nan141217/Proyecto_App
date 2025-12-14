@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
         android:maxSdkVersion="32" />
@@ -14,6 +15,15 @@
 
 =======
 >>>>>>> origin/main
+=======
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" 
+        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+
+>>>>>>> origin/main
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -23,10 +33,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
 <<<<<<< HEAD
+<<<<<<< HEAD
         android:theme="@style/Theme.Inicio"
         android:usesCleartextTraffic="true">
         <activity
             android:name=".LoginActivity"
+=======
+        android:theme="@style/Theme.Inicio">
+        <activity
+            android:name=".LibraryActivity3"
+            android:exported="false" />
+        <activity
+            android:name=".LibraryActivity2"
+>>>>>>> origin/main
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,6 +53,7 @@
             </intent-filter>
         </activity>
         <activity
+<<<<<<< HEAD
             android:name=".RegisterActivity"
             android:exported="false" />
         <activity
@@ -43,6 +63,8 @@
             android:name=".LibraryActivity2"
             android:exported="false" />
         <activity
+=======
+>>>>>>> origin/main
             android:name=".LibraryActivity"
             android:exported="false" />
             
@@ -58,6 +80,7 @@
     </application>
 
 </manifest>
+<<<<<<< HEAD
 =======
         android:theme="@style/Theme.TOFULLTOC">
         <activity
@@ -72,4 +95,6 @@
     </application>
 
 </manifest>
+>>>>>>> origin/main
+=======
 >>>>>>> origin/main
